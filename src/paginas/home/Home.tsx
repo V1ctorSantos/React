@@ -1,16 +1,16 @@
-import React from 'react';
-import './Home.css';
+import React, { useState } from 'react';
 
-function Home(){
-    return (
-        <>
-            <h1 className="titulo">Home</h1>
-            <img className="img" src="https://garden.spoonflower.com/c/6940400/p/f/m/zQglCzzjKvrtu--5hX5c6Gt9dSe0dcaIh2FflwLq-0GUboqAbSw/Scattered%20Music%20Notes%20on%20Purple.jpg"
-            />
-        </>
-    );
+function Home() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  return (
+    <div>
+      {loggedIn ? (
+        <h1>Bem-vindo de volta!</h1>
+      ) : (
+        <button onClick={() => setLoggedIn(true)}>Entrar</button>
+      )}
+    </div>
+  );
 }
-
 export default Home;
-
-
